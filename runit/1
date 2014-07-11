@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec /usr/bin/run-parts /etc/runit/sysinit
+
