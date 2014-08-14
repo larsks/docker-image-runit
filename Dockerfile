@@ -9,6 +9,6 @@ RUN mkdir -p /etc/runit
 
 ADD runit /etc/runit
 
-ONBUILD ADD service/ /service/
+#ONBUILD ADD service/ /service/
 CMD runit-init
 
