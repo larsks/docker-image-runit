@@ -14,9 +14,9 @@ When building images based on this image, place your services in a
       foo/
       bar/
 
-An `ONBUILD` directive in the Dockerfile in this repository will
-incorporate those services into the `/service` directory of your new
-image.
+Then add the service directory to the image:
+
+    ADD service /service
 
 For an example that uses this image, see my [glance][] image.
 
