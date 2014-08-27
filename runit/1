@@ -1,4 +1,20 @@
 #!/bin/sh
+# Run initialization scripts in /etc/runit/sysinit.  Exit 
+# value of this script is 1 if any of the sysinit scripts
+# fails, 0 otherwise.
 
-exec /usr/bin/run-parts /etc/runit/sysinit
+RETVAL=0
+
+echo "start running system initialization scripts."
+
+for script in /etc/runit/sysinit/*; do
+	if [ -f "$script" ] && [ -x "$script" ]; then
+		echo "  $script"
+		$script || RETVAL=1
+	fi
+done
+
+echo "finished running system initialization scripts."
+
+exit $RETVAL
 
