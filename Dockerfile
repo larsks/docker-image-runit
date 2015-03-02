@@ -1,4 +1,4 @@
-FROM fedora:21
+FROM fedora:20
 MAINTAINER Lars Kellogg-Stedman <lars@oddbit.com>
 
 RUN yum -y install dnf dnf-plugins-core; yum clean all
